@@ -1,6 +1,6 @@
 name: Build and push Docker images
 runs: 
-  using: dockerbuildpush
+  using: docker
   args:
     - build-push
 inputs:
