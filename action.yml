@@ -1,5 +1,5 @@
 name: Build and push Docker images
-runs-on: ubuntu-latest
+runs: 
 inputs:
   tags:
     description: Username used to log in to a Docker registry. If not set then no login will occur
