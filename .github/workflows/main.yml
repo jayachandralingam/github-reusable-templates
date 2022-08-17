@@ -9,7 +9,12 @@ on:
       tags:
         required: true
         type: string
-
+      username:
+        required: true
+        type: string
+      password:
+        required: true
+        type: string
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -26,9 +31,9 @@ jobs:
         with:
           # Server address of Docker registry. If not set then will default to Docker Hub
           # Username used to log against the Docker registry
-          username: ${{ secrets.DOCKER_LOGIN_USERNAME }} # optional
+          username: ${{ inputs.username }} # optional
           # Password or personal access token used to log against the Docker registry
-          password: ${{ secrets.DOCKER_LOGIN_PASSWORD }} # optional
+          password: ${{ inputs.password }} # optional
       - name: Build and push Docker images
         uses: docker/build-push-action@v3.1.1
         with:
